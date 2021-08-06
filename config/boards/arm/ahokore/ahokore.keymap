@@ -19,37 +19,6 @@ behaviors {
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
     };
-
-    combos {
-    compatible = "zmk,combos";
-    combo_del {
-        timeout-ms = <50>;
-        key-positions = <18 19>;
-        bindings = <&kp DEL>;
-        layers = <1>;
-    };
-    combo_bspc {
-        timeout-ms = <50>;
-        key-positions = <8 9>;
-        bindings = <&kp BKSP>;
-        layers = <0 1>;
-    };
-    combo_tab {
-        timeout-ms = <50>;
-        key-positions = <0 1>;
-        bindings = <&kp TAB>;
-        layers = <0>;
-
-    };
-    combo_esc {
-        timeout-ms = <50>;
-        key-positions = <1 2>;
-        bindings = <&kp ESC>;
-        layers = <0>;
-
-    };
-};
-
 };
         keymap {
                 compatible = "zmk,keymap";
