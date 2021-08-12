@@ -9,6 +9,9 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+&kscan0 {
+    debounce-period = <7>;
+};
 
 behaviors {
       hm: homerow_mods {
@@ -20,8 +23,8 @@ behaviors {
         bindings = <&kp>, <&kp>;
     };
 };
-        keymap {
-                compatible = "zmk,keymap";
+keymap {
+        compatible = "zmk,keymap";
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
@@ -60,7 +63,7 @@ behaviors {
                         bindings = <
    &trans   &reset      &kp PGUP  &trans &trans     &trans    &trans    &trans    &trans    &trans
    &kp CAPS &kp HOME    &kp PGDN &kp END &trans     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &trans
-   &trans   &trans &trans  &trans &trans     &kp K_PP  &kp K_VOL_DN &kp K_VOL_UP    &kp K_SELECT &trans
+   &trans   &trans &trans  &trans &trans     &kp C_PP  &kp C_VOL_DN &kp C_VOL_UP    &kp C_SELECT &trans
    &trans   &trans    &sl 3 &trans       &trans   &trans
                         >;
                 };
