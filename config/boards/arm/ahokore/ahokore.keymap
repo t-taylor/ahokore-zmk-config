@@ -9,10 +9,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-&kscan0 {
-    debounce-period = <7>;
-};
-
 behaviors {
       hm: homerow_mods {
         compatible = "zmk,behavior-hold-tap";
