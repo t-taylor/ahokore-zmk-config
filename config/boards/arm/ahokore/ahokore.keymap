@@ -33,7 +33,7 @@ keymap {
 &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I   &kp O   &kp P
 &hm LGUI A &hm LALT S &hm LSFT D &hm LCTL F &kp G &kp H &hm LCTL J  &hm RSFT K   &hm RALT L   &hm RGUI SEMI
 &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
-   &lt 1 DEL &kp LCTL &kp ESC   &kp RET &kp SPC &lt 1 TAB
+   &lt 1 DEL &kp BSPC &kp ESC   &kp RET &kp SPC &lt 1 TAB
                         >;
                 };
 
