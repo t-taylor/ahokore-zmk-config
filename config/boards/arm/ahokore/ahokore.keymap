@@ -10,14 +10,24 @@
 
 / {
 behaviors {
-      hm: homerow_mods {
+   lh_pht: left_hand_positional_hold_tap {
         compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS";
-        #binding-cells = <2>;
-        tapping_term_ms = <300>;
-        flavor = "tap-preferred";
+        label = "LEFT_POSITIONAL_HOLD_TAP";
+        flavor = "tap-unless-interrupted";
+        tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+        quick-tap-ms = <200>;
         bindings = <&kp>, <&kp>;
-    };
+        hold-trigger-key-positions = <5 6 7 8 9 10>;    // <---[[right-hand keys]]
+     };
+   rh_pht: right_hand_positional_hold_tap {
+        compatible = "zmk,behavior-hold-tap";
+        label = "RIGHT_POSITIONAL_HOLD_TAP";
+        flavor = "tap-unless-interrupted";
+        tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+        quick-tap-ms = <200>;
+        bindings = <&kp>, <&kp>;
+        hold-trigger-key-positions = <0 1 2 3 4 5>;    // <---[[left-hand keys]]
+     };
 };
 keymap {
         compatible = "zmk,keymap";
@@ -30,9 +40,9 @@ keymap {
 //             | DEL | BSP |  ECS | ENT | SPC  | TAB |
                         bindings = <
    &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I   &kp O   &kp P
-   &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K   &kp L   &kp SEMI
+   &lh_pht LGUI A &lh_pht LALT S &lh_pht LSFT D &lh_pht LCTL F &kp G &kp H &rh_pht LCTL J  &rh_pht RSFT K   &rh_pht RALT L   &rh_pht RGUI SEMI
    &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
-   &lt 1 DEL &mt LCTL BKSP &mt LSHIFT ESC &lt 2 RET &mt LALT SPC &lt 1 TAB
+      &lt 1 DEL &kp LCTL &kp ESC   &kp RET &kp SPC &lt 1 TAB
                         >;
                 };
 
