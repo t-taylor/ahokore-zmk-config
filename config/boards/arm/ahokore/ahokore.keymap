@@ -10,41 +10,30 @@
 
 / {
 behaviors {
-   lh_pht: left_hand_positional_hold_tap {
+   hm: homerow_mods {
         compatible = "zmk,behavior-hold-tap";
-        label = "LEFT_POSITIONAL_HOLD_TAP";
+        label = "HOMEROW_MODS";
         #binding-cells = <2>;
-        flavor = "tap-unless-interrupted";
-        tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-        quick-tap-ms = <200>;
+        tapping-term-ms = <150>;
+        quick-tap-ms = <0>;
+        flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
-        hold-trigger-key-positions = <5 6 7 8 9 10>;    // <---[[right-hand keys]]
-     };
-   rh_pht: right_hand_positional_hold_tap {
-        compatible = "zmk,behavior-hold-tap";
-        label = "RIGHT_POSITIONAL_HOLD_TAP";
-        #binding-cells = <2>;
-        flavor = "tap-unless-interrupted";
-        tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-        quick-tap-ms = <200>;
-        bindings = <&kp>, <&kp>;
-        hold-trigger-key-positions = <0 1 2 3 4 5>;    // <---[[left-hand keys]]
-     };
+    };
 };
 keymap {
-        compatible = "zmk,keymap";
+     compatible = "zmk,keymap";
 
-                default_layer {
+             default_layer {
 // -----------------------------------------------------------------------------------------
 // |  Q  |  W  |  E  |  R  |  T   |  Y  |  U   |  I  |  O  |  P  |
 // |  A  |  S  |  D  |  F  |  G   |  H  |  J   |  K  |  L  |  ;  |
 // |  Z  |  X  |  C  |  V  |  B   |  N  |  M   |  ,  |  .  |  /  |
 //             | DEL | BSP |  ECS | ENT | SPC  | TAB |
-                        bindings = <
-   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I   &kp O   &kp P
-   &lh_pht LGUI A &lh_pht LALT S &lh_pht LSFT D &lh_pht LCTL F &kp G &kp H &rh_pht LCTL J  &rh_pht RSFT K   &rh_pht RALT L   &rh_pht RGUI SEMI
-   &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
-      &lt 1 DEL &kp LCTL &kp ESC   &kp RET &kp SPC &lt 1 TAB
+                     bindings = <
+&kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I   &kp O   &kp P
+&hm LGUI A &hm LALT S &hm LSFT D &hm LCTL F &kp G &kp H &hm LCTL J  &hm RSFT K   &hm RALT L   &hm RGUI SEMI
+&kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
+   &lt 1 DEL &kp LCTL &kp ESC   &kp RET &kp SPC &lt 1 TAB
                         >;
                 };
 
