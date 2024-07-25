@@ -73,9 +73,23 @@ keymap {
 //             |     |      |     |      |      |      |
                         bindings = <
    &trans &trans      &bt BT_CLR    &sys_reset     &trans     &trans  &kp F1   &kp F2   &kp F3 &kp F4
-   &trans &bt BT_PRV  &bt BT_SEL 0  &bt BT_NXT &trans     &trans  &kp F5   &kp F6   &kp F7 &kp F8
+   &trans &bt BT_PRV  &bt BT_SEL 0  &bt BT_NXT &tog 4     &trans  &kp F5   &kp F6   &kp F7 &kp F8
    &bootloader &trans &trans        &trans     &trans     &trans  &kp F9   &kp F10   &kp F11 &kp F12
                       &trans        &trans     &trans     &trans  &trans   &trans
+                        >;
+                };
+
+	             gaming_layer {
+// -----------------------------------------------------------------------------------------
+// |  Q  |  W  |  E  |  R  |  T   |  Y  |  U   |  I  |  O  |  P  |
+// |  A  |  S  |  D  |  F  |  G   |  H  |  J   |  K  |  L  |  ;  |
+// |  Z  |  X  |  C  |  V  |  B   |  N  |  M   |  ,  |  .  |  /  |
+//             | DEL | BSP |  ECS | ENT | SPC  | TAB |
+                     bindings = <
+&kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I   &kp O   &kp P
+&kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K   &kp L   &kp SEMI
+&kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
+      &kp DEL &kp BSPC &kp ESC  &kp RET &kp SPC &tog 4
                         >;
                 };
 
